@@ -50,7 +50,7 @@ def get_content_type(url):
 
 def check_s3_object_exists(bucket,path):
     if is_url(path):
-        path = urllib.splitquery(urllib.splithost(urllib.splittype(path)[1])[1])[0]
+        path = urllib2.splitquery(urllib2.splithost(urllib2.splittype(path)[1])[1])[0]
     return (bucket.get_key(path)!=None)
     
 
